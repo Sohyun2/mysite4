@@ -1,0 +1,60 @@
+<<<<<<<< 빈 와이어링(묶기) >>>>>>>
+
+
+1. maven project 생성
+
+2. pom 설정
+
+3. web.xml 설정
+   Controller <- Service <- Repository <- sqlSession
+
+4. AppConfig 설정
+   |---- DBConfig 		: DataSource
+   |				  → jdbc.properties
+   |---- MyBatisConfig		: SqlSession, SqlSessionFactory
+
+5. WebConfig 설정
+   |---- MVCConfig설정		: ViewResolver, DefaultServletHandler, Message Converter
+   |---- SecurityConfig		: Interceptor, ArgumentResolver
+   |---- MessageConfig		: Message Source
+   |				  → message_ko.properties
+   |---- FileUploadConfig	: MultipartResolver, Resources
+   |				  → multipart.properties
+
+6. GlobalExceptionHandler (Scanning만 해주면 됨)
+
+7. slf4j, Logback
+
+
+com.douzone.config.app
+com.douzone.config.web
+
+com.douzone.config.mybatis
+com.douzone.config.messages
+
+WEB-INF
+	|---- classes
+		|---- com
+			|---- douzone
+				|---- config
+					|---- web
+					|---- app
+					|		|---- DBConfig.class
+					|		|---- MyBatisConfig.class
+					|		|---- 
+					|---- mybatis
+					|		|---- configuration.sml
+					|---- messages
+					|		|---- messages_ko.properties
+					|---- properties
+							|---- jdbc.properties
+							|---- multipart.properties
+Spring-Study
+|----Spring-Study-Container
+|----Spring-Study-springex
+|----Spring-Study-springex2
+|----Spring-Study-mysite3
+|----Spring-Study-mysite4
+
+
+
